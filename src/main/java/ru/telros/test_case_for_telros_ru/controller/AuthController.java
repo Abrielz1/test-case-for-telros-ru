@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.telros.test_case_for_telros_ru.dto.create.UserCredentialsNewDto;
 import ru.telros.test_case_for_telros_ru.dto.update.UserResponseDto;
 import ru.telros.test_case_for_telros_ru.exception.exceptions.AlreadyExistsException;
-import ru.telros.test_case_for_telros_ru.repository.UserRepository;
+import ru.telros.test_case_for_telros_ru.repository.jpa.UserRepository;
 import ru.telros.test_case_for_telros_ru.security.service.SecurityService;
 import java.time.LocalDateTime;
 

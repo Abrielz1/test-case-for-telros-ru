@@ -1,5 +1,6 @@
 package ru.telros.test_case_for_telros_ru.controller;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.RequiredArgsConstructor;
@@ -10,10 +11,12 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import ru.telros.test_case_for_telros_ru.dto.response.UserCredentialsUpdateDto;
 import ru.telros.test_case_for_telros_ru.dto.update.UserResponseCredentialResponseDto;
 import ru.telros.test_case_for_telros_ru.dto.update.UserResponseCredentialShortDto;
 import ru.telros.test_case_for_telros_ru.service.UserCredentialService;
@@ -79,24 +82,24 @@ public class UserCredentialController {
     @ResponseStatus(HttpStatus.OK)
     public UserResponseCredentialResponseDto updateUserCredentialById(@Positive
                                                                       @PathVariable(name = "userId")
-                                                                      Long userId) {
+                                                                      Long userId,
+                                                                      @NotBlank @RequestBody
+                                                                      UserCredentialsUpdateDto updateDto) {
         log.info(("\nUser credentials with id: %d" +
                 " was updated via users controller at time: ").formatted(userId)
                 + LocalDateTime.now() + "\n");
 
-        return userCredentialService.updateUserCredentialById(userId);
+        return userCredentialService.updateUserCredentialById(userId, updateDto);
     }
 
     @DeleteMapping("/{userId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public UserResponseCredentialResponseDto deleteUserCredentialsById(@Positive
-                                                                       @PathVariable(name = "userId")
-                                                                       Long userId) {
+    public void deleteUserCredentialsById(@Positive @PathVariable(name = "userId") Long userId) {
 
         log.info(("\nUser credentials with id: %d" +
                 " was deleted via users controller at time: ").formatted(userId)
                 + LocalDateTime.now() + "\n");
 
-        return userCredentialService.deleteUserCredentialsById(userId);
+        userCredentialService.deleteUserCredentialsById(userId);
     }
 }

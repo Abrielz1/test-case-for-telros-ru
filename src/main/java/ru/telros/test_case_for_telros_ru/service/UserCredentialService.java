@@ -1,6 +1,7 @@
 package ru.telros.test_case_for_telros_ru.service;
 
 import org.springframework.data.domain.PageRequest;
+import ru.telros.test_case_for_telros_ru.dto.response.UserCredentialsUpdateDto;
 import ru.telros.test_case_for_telros_ru.dto.update.UserResponseCredentialResponseDto;
 import ru.telros.test_case_for_telros_ru.dto.update.UserResponseCredentialShortDto;
 
@@ -14,7 +15,7 @@ public interface UserCredentialService {
 
     UserResponseCredentialResponseDto getUserCredentialById(Long userId);
 
-    UserResponseCredentialResponseDto updateUserCredentialById(Long userId);
+    UserResponseCredentialResponseDto updateUserCredentialById(Long userId, UserCredentialsUpdateDto updateDto);
 
-    UserResponseCredentialResponseDto deleteUserCredentialsById(Long userId);
+    void deleteUserCredentialsById(Long userId);
 }

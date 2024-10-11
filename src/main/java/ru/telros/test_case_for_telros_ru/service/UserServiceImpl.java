@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import ru.telros.test_case_for_telros_ru.dto.update.UserResponseDto;
-import ru.telros.test_case_for_telros_ru.repository.UserRepository;
+import ru.telros.test_case_for_telros_ru.repository.jpa.UserRepository;
 import java.util.List;
 
 @Slf4j

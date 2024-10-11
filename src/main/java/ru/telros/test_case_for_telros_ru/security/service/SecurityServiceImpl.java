@@ -12,8 +12,8 @@ import ru.telros.test_case_for_telros_ru.dto.create.UserCredentialsNewDto;
 import ru.telros.test_case_for_telros_ru.dto.update.UserResponseDto;
 import ru.telros.test_case_for_telros_ru.model.User;
 import ru.telros.test_case_for_telros_ru.model.UserCredential;
-import ru.telros.test_case_for_telros_ru.repository.UserCredentialRepository;
-import ru.telros.test_case_for_telros_ru.repository.UserRepository;
+import ru.telros.test_case_for_telros_ru.repository.jpa.UserCredentialRepository;
+import ru.telros.test_case_for_telros_ru.repository.jpa.UserRepository;
 
 @Slf4j
 @Service

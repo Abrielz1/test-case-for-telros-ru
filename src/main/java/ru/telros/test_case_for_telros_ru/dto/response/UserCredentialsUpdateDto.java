@@ -1,5 +1,7 @@
 package ru.telros.test_case_for_telros_ru.dto.response;
 
+import ru.telros.test_case_for_telros_ru.security.model.RoleType;
+
 import java.time.LocalDate;
 
 public record UserCredentialsUpdateDto (Long userId,
@@ -7,7 +9,12 @@ public record UserCredentialsUpdateDto (Long userId,
                                         String patronym,
                                         String lastName,
                                         String email,
+
+                                        String username,
+
+                                        String password,
                                         String phoneNumber,
-                                        LocalDate birthDate) {
+                                        LocalDate birthDate,
+                                        RoleType role) {
 
 }
