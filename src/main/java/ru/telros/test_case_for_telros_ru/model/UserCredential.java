@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.proxy.HibernateProxy;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Table(name = "users_credentials")
@@ -47,6 +48,9 @@ public class UserCredential {
 
     @Column(name = "phone_number", nullable = false, unique = true)
     private String phoneNumber;
+
+    @Column(name = "birth_date", nullable = false)
+    private LocalDate birthDate;
 
     @OneToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "user_id")

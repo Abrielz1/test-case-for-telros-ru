@@ -1,8 +1,8 @@
 package ru.telros.test_case_for_telros_ru.service;
 
 import org.springframework.data.domain.PageRequest;
-import ru.telros.test_case_for_telros_ru.dto.UserResponseCredentialResponseDto;
-import ru.telros.test_case_for_telros_ru.dto.UserResponseCredentialShortDto;
+import ru.telros.test_case_for_telros_ru.dto.update.UserResponseCredentialResponseDto;
+import ru.telros.test_case_for_telros_ru.dto.update.UserResponseCredentialShortDto;
 
 import java.util.List;
 

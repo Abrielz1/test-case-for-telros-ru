@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import ru.telros.test_case_for_telros_ru.dto.UserResponseDto;
+import ru.telros.test_case_for_telros_ru.dto.update.UserResponseDto;
 import ru.telros.test_case_for_telros_ru.service.UserService;
 import java.time.LocalDateTime;
 import java.util.List;

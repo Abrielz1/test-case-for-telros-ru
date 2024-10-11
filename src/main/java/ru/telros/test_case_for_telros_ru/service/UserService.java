@@ -1,7 +1,7 @@
 package ru.telros.test_case_for_telros_ru.service;
 
 import org.springframework.data.domain.PageRequest;
-import ru.telros.test_case_for_telros_ru.dto.UserResponseDto;
+import ru.telros.test_case_for_telros_ru.dto.update.UserResponseDto;
 
 import java.util.List;
 

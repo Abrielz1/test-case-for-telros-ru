@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import ru.telros.test_case_for_telros_ru.dto.UserResponseCredentialResponseDto;
-import ru.telros.test_case_for_telros_ru.dto.UserResponseCredentialShortDto;
+import ru.telros.test_case_for_telros_ru.dto.update.UserResponseCredentialResponseDto;
+import ru.telros.test_case_for_telros_ru.dto.update.UserResponseCredentialShortDto;
 import ru.telros.test_case_for_telros_ru.repository.UserCredentialRepository;
 import java.util.List;
 
