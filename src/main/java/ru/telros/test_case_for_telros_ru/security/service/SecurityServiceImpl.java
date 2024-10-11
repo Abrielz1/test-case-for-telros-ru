@@ -9,7 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.telros.test_case_for_telros_ru.dto.create.UserCredentialsNewDto;
-import ru.telros.test_case_for_telros_ru.dto.update.UserResponseDto;
+import ru.telros.test_case_for_telros_ru.dto.update.UserCredentialsResponseDto;
 import ru.telros.test_case_for_telros_ru.model.User;
 import ru.telros.test_case_for_telros_ru.model.UserCredential;
 import ru.telros.test_case_for_telros_ru.repository.jpa.UserCredentialRepository;
@@ -28,7 +28,7 @@ public class SecurityServiceImpl implements SecurityService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public UserResponseDto register(UserCredentialsNewDto createUserRequest) {
+    public UserCredentialsResponseDto register(UserCredentialsNewDto createUserRequest) {
 
         User user = User.builder()
                 .userName(createUserRequest.userName())
@@ -51,9 +51,8 @@ public class SecurityServiceImpl implements SecurityService {
 
         credentialRepository.saveAndFlush(credential);
 
-        return new UserResponseDto(
+        return new UserCredentialsResponseDto(
                 user.getUserName(),
-                user.getPassword(),
                 credential.getEmail(),
                 createUserRequest.firstName(),
                 credential.getPatronym(),

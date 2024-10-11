@@ -15,6 +15,7 @@ import ru.telros.test_case_for_telros_ru.repository.jpa.UserCredentialRepository
 import ru.telros.test_case_for_telros_ru.repository.jpa.UserRepository;
 import ru.telros.test_case_for_telros_ru.security.model.RoleType;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Slf4j
@@ -28,6 +29,10 @@ public class UserCredentialServiceImpl implements UserCredentialService {
 
     @Override
     public List<UserResponseCredentialShortDto> getListUserShortCredentials(PageRequest page) {
+
+        log.info("\nAll users short accounts dto's list were sent via users service at time: "
+                + LocalDateTime.now() + "\n");
+
         return userCredentialRepository.findAll(page).stream()
                 .map(UserCredentialsMapper::toShortDto)
                 .toList();
@@ -35,6 +40,10 @@ public class UserCredentialServiceImpl implements UserCredentialService {
 
     @Override
     public List<UserResponseCredentialResponseDto> getListUserFullCredentials(PageRequest page) {
+
+        log.info("\nAll users full accounts dto's  list were sent via users service at time: "
+                + LocalDateTime.now() + "\n");
+
         return userCredentialRepository.findAll(page).stream()
                 .map(UserCredentialsMapper::toDto)
                 .toList();
@@ -42,6 +51,9 @@ public class UserCredentialServiceImpl implements UserCredentialService {
 
     @Override
     public UserResponseCredentialResponseDto getUserCredentialById(Long userId) {
+
+        log.info("%nUser account was sent with id: %d via users service at time: ".formatted(userId)
+                + LocalDateTime.now() + "\n");
 
         return UserCredentialsMapper.toDto(this.checkUserCredentialInDb(userId));
     }
@@ -92,30 +104,50 @@ public class UserCredentialServiceImpl implements UserCredentialService {
             }
         }
 
-        userCredentialRepository.saveAndFlush(userCredential);
 
-        return UserCredentialsMapper.toDto(userCredential);
+        log.info(("\nUser account with userId: %d" +
+                " was updated via users service at time: ").formatted(userId) +
+                LocalDateTime.now() + "\n");
+
+
+        return UserCredentialsMapper.toDto(
+                userCredentialRepository.saveAndFlush(userCredential));
     }
 
     @Override
     public void deleteUserCredentialsById(Long userId) {
+
+        log.info("%nUser account with id: %d was deleted via users service at time: ".formatted(userId)
+                + LocalDateTime.now() + "\n");
 
         userCredentialRepository.deleteById(userId);
     }
 
     private User checkUserInDb(Long userId) {
 
+        log.info("User with id: %d was fond in db".formatted(userId)
+                + LocalDateTime.now() + "\n");
+
         return userRepository.findById(userId).orElseThrow(() -> {
-                log.info("User in Db is not present!");
-            return new ObjectNotFoundException("User in Db not present!");
+
+            log.info("UserCredential with id: %d was not fond in db".formatted(userId)
+                    + LocalDateTime.now() + "\n");
+
+            return new ObjectNotFoundException("User with id: %d was not present in Db".formatted(userId));
         });
     }
 
     private UserCredential checkUserCredentialInDb(Long userId) {
 
+        log.info("UserCredential with id: %d was fond in db".formatted(userId)
+                + LocalDateTime.now() + "\n");
+
         return userCredentialRepository.findById(userId).orElseThrow(() -> {
-            log.info("UserCredential in Db is not present!");
-            return new ObjectNotFoundException("User in Db not present!");
+
+            log.info("UserCredential with id: %d was not fond in db".formatted(userId)
+                    + LocalDateTime.now() + "\n");
+
+            return new ObjectNotFoundException("User with id: %d was not present in Db".formatted(userId));
         });
     }
 }
