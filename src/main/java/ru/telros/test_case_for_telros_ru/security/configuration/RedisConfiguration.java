@@ -9,7 +9,7 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisKeyValueAdapter;
 import org.springframework.data.redis.core.convert.KeyspaceConfiguration;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
-import ru.telros.test_case_for_telros_ru.security.entity.RefreshToken;
+import ru.telros.test_case_for_telros_ru.dto.response.RefreshTokenResponseDto;
 import java.time.Duration;
 import java.util.Collections;
 
@@ -36,7 +36,7 @@ public class RedisConfiguration {
 
         @Override
         protected Iterable<KeyspaceSettings> initialConfiguration() {
-            KeyspaceSettings keyspaceSettings = new KeyspaceSettings(RefreshToken.class, REFRESH_TOKEN_KEYSPACE);
+            KeyspaceSettings keyspaceSettings = new KeyspaceSettings(RefreshTokenResponseDto.class, REFRESH_TOKEN_KEYSPACE);
 
             keyspaceSettings.setTimeToLive(refreshTokenExpiration.getSeconds());
 

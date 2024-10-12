@@ -25,13 +25,15 @@ repositories {
 
 dependencies {
 
+	implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
+	implementation("org.springframework.boot:spring-boot-starter-security:3.2.4")
+	runtimeOnly("org.flywaydb:flyway-database-postgresql:10.19.0")
+
 	implementation("org.springframework.boot:spring-boot-starter-validation:3.2.4")
 	implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.hibernate.orm:hibernate-core:6.4.4.Final")
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
-	implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
-	implementation("org.springframework.boot:spring-boot-starter-security:3.2.4")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-validation:3.2.4")
 	implementation("redis.clients:jedis")

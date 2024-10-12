@@ -2,20 +2,30 @@ package ru.telros.test_case_for_telros_ru.security.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.index.Indexed;
+import java.time.Instant;
 
-@Setter
-@Getter
+@Data
 @Builder
-@ToString
-@EqualsAndHashCode
+@RedisHash("refresh_tokens")
 @NoArgsConstructor
 @AllArgsConstructor
 public class RefreshToken {
 
+    @Id
+    @Indexed
+    private Long id;
+
+    @Indexed
+    private Long userId;
+
+    @Indexed
     private String token;
+
+    @Indexed
+    private Instant expiryDate;
 }
