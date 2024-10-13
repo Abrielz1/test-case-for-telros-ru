@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0536b0b8-1a80-4fd8-a03f-49d6a392452f",
+		"_postman_id": "3aca2a62-3c28-48fe-bf4f-f0b7bed796f6",
 		"name": "Telros",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "24040827"
@@ -65,6 +65,35 @@
 								"details",
 								"user",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Petr\",\r\n    \"patronym\" : \"Petrovich\",\r\n    \"lastName\" : \"Petrov\",\r\n    \"email\" : \"aaa11@mail.com\",\r\n    \"phoneNumber\" : \"+7(952)9815521\",\r\n    \"userName\" : \"petya\",\r\n    \"password\" : \"123\",\r\n    \"birthDate\" : \"2001-01-11\",\r\n    \"roles\": [\"ROLE_USER\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
 							]
 						}
 					},
@@ -186,7 +215,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userId\" : \"1\",\r\n    \"username\" : \"vasyanya\",\r\n    \"firstName\" : \"Vasyan\"\r\n}",
+							"raw": "{\r\n    \"userId\" : \"1\",\r\n    \"username\" : \"vasya\",\r\n    \"firstName\" : \"Vasyliy\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -251,7 +280,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\" : \"Vasya\",\r\n    \"patronym\" : \"Petyan\",\r\n    \"lastName\" : \"Sydorov\",\r\n    \"email\" : \"aaa11@mail.com\",\r\n    \"phoneNumber\" : \"+7(952)9815521\",\r\n    \"userName\" : \"admin\",\r\n    \"password\" : \"admin\",\r\n    \"birthDate\" : \"2001-01-11\",\r\n    \"roles\": [\"ROLE_USER\", \"ROLE_ADMIN\"]\r\n}",
+					"raw": "{\r\n    \"firstName\" : \"Vasya\",\r\n    \"patronym\" : \"Petrovich\",\r\n    \"lastName\" : \"Sydorov\",\r\n    \"email\" : \"aaa11@mail.com\",\r\n    \"phoneNumber\" : \"+7(952)9815521\",\r\n    \"userName\" : \"admin\",\r\n    \"password\" : \"admin\",\r\n    \"birthDate\" : \"2001-01-11\",\r\n    \"roles\": [\"ROLE_USER\", \"ROLE_ADMIN\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
