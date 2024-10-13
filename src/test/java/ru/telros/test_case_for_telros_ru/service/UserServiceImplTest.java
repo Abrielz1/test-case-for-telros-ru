@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyLong;import static org.mockito.ArgumentMatchers.matches;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -57,7 +57,6 @@ class UserServiceImplTest {
     void whenUserServiceCalledGetUserCredentialList_ThenReceivedUserWithNameVasyan() {
 
         List<User> list = new ArrayList<>();
-
         list.add(user);
 
         PageRequest p = PageRequest.of(0, 20);
@@ -67,9 +66,9 @@ class UserServiceImplTest {
 
         List<UserShortResponseDto> userDtoList = this.userService.getUserCredentialList(p);
 
-        assertEquals(1L, userDtoList.size());
-        assertEquals("vasyan", userDtoList.get(0).getUserName());
-        assertEquals(userDto, userDtoList.get(0));
+        assertEquals(1L, userDtoList.size(), "value: 1");
+        assertEquals("vasyan", userDtoList.get(0).getUserName(), "value: vasyan");
+        assertEquals(userDto, userDtoList.get(0), "valu: UserShortResponseDto(userName=vasyan)");
     }
 
     @Test
@@ -80,7 +79,7 @@ class UserServiceImplTest {
 
         userDto = userService.getUserCredentialById(user.getId());
 
-        assertThat(userDto.getUserName()).isEqualTo("vasyan");
+        assertThat(userDto.getUserName()).isEqualTo("vasyan", "value: vasyan");
     }
 
     @Test
@@ -94,6 +93,8 @@ class UserServiceImplTest {
                 () -> userService.getUserCredentialById(1000L)
         );
 
-        assertEquals("User with id: 1000 was not present in Db", exc.getMessage());
+        assertEquals("User with id: 1000 was not present in Db",
+                exc.getMessage(),
+                "User with id: 1000 was not present in Db");
     }
 }
