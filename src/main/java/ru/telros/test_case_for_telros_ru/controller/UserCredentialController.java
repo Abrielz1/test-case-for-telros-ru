@@ -37,12 +37,8 @@ public class UserCredentialController {
     @GetMapping("/short")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.OK)
-    public List<UserResponseCredentialShortDto> getListUserShortCredentials(@PositiveOrZero
-                                                                            @RequestParam(defaultValue = "0")
-                                                                                Integer from,
-                                                                            @Positive
-                                                                            @RequestParam(defaultValue = "10")
-                                                                                Integer size) {
+    public List<UserResponseCredentialShortDto> getListUserShortCredentials(@PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
+                                                                            @Positive @RequestParam(defaultValue = "10") Integer size) {
 
         log.info("\nlist of users short credentials were sent from users controller" +
                 " time: " + LocalDateTime.now() + "\n");
@@ -55,12 +51,8 @@ public class UserCredentialController {
     @GetMapping("/full")
     @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.OK)
-    public List<UserResponseCredentialResponseDto> getListUserFullCredentials(@PositiveOrZero
-                                                                              @RequestParam(defaultValue = "0")
-                                                                              Integer from,
-                                                                              @Positive
-                                                                              @RequestParam(defaultValue = "10")
-                                                                              Integer size) {
+    public List<UserResponseCredentialResponseDto> getListUserFullCredentials(@PositiveOrZero @RequestParam(defaultValue = "0") Integer from,
+                                                                              @Positive @RequestParam(defaultValue = "10") Integer size) {
 
         log.info("\nlist of users full credentials were sent from users controller" +
                 " time: " + LocalDateTime.now() + "\n");
@@ -73,9 +65,7 @@ public class UserCredentialController {
     @GetMapping("/user/{userId}")
     @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.OK)
-    public UserResponseCredentialResponseDto getUserCredentialById(@Positive
-                                                           @PathVariable(name = "userId")
-                                                           Long userId) {
+    public UserResponseCredentialResponseDto getUserCredentialById(@Positive @PathVariable(name = "userId") Long userId) {
 
         log.info(("\nUser credentials with id: %d" +
                 " was sent via users controller at time: ").formatted(userId)
@@ -87,12 +77,8 @@ public class UserCredentialController {
     @PutMapping("/user/{userId}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.OK)
-    public UserResponseCredentialResponseDto updateUserCredentialById(@Positive
-                                                                      @PathVariable(name = "userId")
-                                                                      Long userId,
-                                                                      @Validated(Update.class)
-                                                                      @RequestBody
-                                                                      UserCredentialsUpdateDto updateDto) {
+    public UserResponseCredentialResponseDto updateUserCredentialById(@Positive @PathVariable(name = "userId") Long userId,
+                                                                      @Validated(Update.class) @RequestBody UserCredentialsUpdateDto updateDto) {
         log.info(("\nUser credentials with id: %d" +
                 " was updated via users controller at time: ").formatted(userId)
                 + LocalDateTime.now() + "\n");
