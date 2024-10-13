@@ -83,7 +83,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODc2MDE4MCwiZXhwIjoxNzI4NzYwMzYwfQ.ZNRYlLgVXAgUoUj_Fpt-di-qfKsfCkWQNaktLAFPpFgWALjGd48wtZfa6AtlWYdHW07bFWaQH-TT9Umu0rwzgw",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODgyODY4NiwiZXhwIjoxNzI4ODI5Mjg2fQ.vqsy061nvGcw0tl_Njcg8EqL1LJCVej5Idc8Chda7w90Grns2-8DRAxluHeJ2KSGdE12jqz7Y7CpNPzJ1zpReA",
 									"type": "string"
 								}
 							]
@@ -114,7 +114,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODc2MDE4MCwiZXhwIjoxNzI4NzYwMzYwfQ.ZNRYlLgVXAgUoUj_Fpt-di-qfKsfCkWQNaktLAFPpFgWALjGd48wtZfa6AtlWYdHW07bFWaQH-TT9Umu0rwzgw",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODgyODY4NiwiZXhwIjoxNzI4ODI5Mjg2fQ.vqsy061nvGcw0tl_Njcg8EqL1LJCVej5Idc8Chda7w90Grns2-8DRAxluHeJ2KSGdE12jqz7Y7CpNPzJ1zpReA",
 									"type": "string"
 								}
 							]
@@ -145,7 +145,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODc2MDE4MCwiZXhwIjoxNzI4NzYwMzYwfQ.ZNRYlLgVXAgUoUj_Fpt-di-qfKsfCkWQNaktLAFPpFgWALjGd48wtZfa6AtlWYdHW07bFWaQH-TT9Umu0rwzgw",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODgyODY4NiwiZXhwIjoxNzI4ODI5Mjg2fQ.vqsy061nvGcw0tl_Njcg8EqL1LJCVej5Idc8Chda7w90Grns2-8DRAxluHeJ2KSGdE12jqz7Y7CpNPzJ1zpReA",
 									"type": "string"
 								}
 							]
@@ -177,7 +177,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODc2MDE4MCwiZXhwIjoxNzI4NzYwMzYwfQ.ZNRYlLgVXAgUoUj_Fpt-di-qfKsfCkWQNaktLAFPpFgWALjGd48wtZfa6AtlWYdHW07bFWaQH-TT9Umu0rwzgw",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODgyODY4NiwiZXhwIjoxNzI4ODI5Mjg2fQ.vqsy061nvGcw0tl_Njcg8EqL1LJCVej5Idc8Chda7w90Grns2-8DRAxluHeJ2KSGdE12jqz7Y7CpNPzJ1zpReA",
 									"type": "string"
 								}
 							]
@@ -218,7 +218,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTcyODc2MDY2MSwiZXhwIjoxNzI4NzYwODQxfQ.FHq53MrQ_YTOsOZRp7o_5MiPYzYnEDpvlzA16AJl0JZVIsemzZ1MSlZHK0R3-7fKocx9PubszMpjZz239kw3qQ",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2YXN5YW55YSIsImlhdCI6MTcyODgyODg5OSwiZXhwIjoxNzI4ODI5NDk5fQ.u8Rwxi-2s4COIz8ZrXSag9SY_2SD_gTNF2I3K2-CEgEymhP2Abyx3oZMbyNM-fBLbiZWpd3f00j4tzbWzfuPwg",
 									"type": "string"
 								}
 							]
@@ -268,6 +268,38 @@
 					"path": [
 						"auth",
 						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AuthenticateUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\" : \"admin\",\r\n    \"password\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/signing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"signing"
 					]
 				}
 			},

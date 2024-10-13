@@ -9,5 +9,4 @@ import java.util.Optional;
 @Repository
 public interface UserCredentialRepository extends JpaRepository<UserCredential, Long> {
 
-    Optional<UserCredential> findById(Long userId);
 }
