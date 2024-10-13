@@ -87,7 +87,7 @@
 ```
 {
 "firstName" : "Vasya",
-"patronym" : "Petyan",
+"patronym" : "Petrovich",
 "lastName" : "Sydorov",
 "email" : "aaa11@mail.com",
 "phoneNumber" : "+7(952)9815521",
@@ -109,7 +109,7 @@
 "userName": "admin",
 "email": "aaa11@mail.com",
 "firstname": "Vasya",
-"patronym": "Petyan",
+"patronym": "Petrovich",
 "lastName": "Sydorov",
 "phoneNumber": "+7(952)9815521",
 "birthDat": "2001-01-11"
@@ -162,13 +162,13 @@
 [
     {
     "firstName": "Vasya",
-    "patronym": "Petyan",
+    "patronym": "Petrovich",
     "lastName": "Sydorov",
     "birthDate": "2001-01-11"
     },
     {
-    "firstName": "Petya",
-    "patronym": "Vasyan",
+    "firstName": "Petr",
+    "patronym": "Petrovich",
     "lastName": "Petrov",
     "birthDate": "2001-01-11"
     }
@@ -190,7 +190,7 @@
 [
 {
 "firstName": "Vasya",
-"patronym": "Petyan",
+"patronym": "Petrovich",
 "lastName": "Sydorov",
 "email": "aaa11@mail.com",
 "phoneNumber": "+7(952)9815521",
@@ -198,7 +198,7 @@
 },
 {
 "firstName": "Petya",
-"patronym": "Vasyan",
+"patronym": "Petrovich",
 "lastName": "Petrov",
 "email": "a1a11@mail.com",
 "phoneNumber": "+7(952)9815531",
@@ -219,7 +219,7 @@
 
 {
 "firstName": "Vasya",
-"patronym": "Petyan",
+"patronym": "Petrovich",
 "lastName": "Sydorov",
 "email": "aaa11@mail.com",
 "phoneNumber": "+7(952)9815521",
@@ -241,8 +241,8 @@
 
 {
 "userId" : "1",
-"username" : "vasyanya",
-"firstName" : "Vasyan"
+"username" : "vasya",
+"firstName" : "Vasyliy"
 }
 
 ```
@@ -250,8 +250,8 @@
 
 ```
 {
-"firstName": "Vasyan",
-"patronym": "Petyan",
+"firstName": "Vasyliy",
+"patronym": "Petrovich",
 "lastName": "Sydorov",
 "email": "aaa11@mail.com",
 "phoneNumber": "+7(952)9815521",
