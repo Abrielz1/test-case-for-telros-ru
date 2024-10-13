@@ -24,11 +24,11 @@ repositories {
 }
 
 dependencies {
-
 	implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
 	implementation("org.springframework.boot:spring-boot-starter-security:3.2.4")
+    testImplementation("junit:junit:4.13.1")
+	testImplementation("junit:junit:4.13.1")
 	runtimeOnly("org.flywaydb:flyway-database-postgresql:10.19.0")
-
 	implementation("org.springframework.boot:spring-boot-starter-validation:3.2.4")
 	implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
